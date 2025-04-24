@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClimApp - Sistema de Información Climática</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+</head>
+<body>
+    <div class="app">
+        <header class="header" role="banner">
+            <div class="app__container header__container">
+                <div class="header__logo" aria-label="ClimApp logo">
+                    <span class="header__logo-icon icon-logo" role="img" aria-label="Icono clima"></span>
+                    ClimApp
+                </div>
+                <nav class="header__nav nav" role="navigation" aria-label="Navegación principal">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link nav__link--active" id="homeLink">Inicio</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link" id="mapLink">Mapa</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Historial</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Alertas</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Configuración</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="main" role="main">
+            <div class="app__container">
+                <section class="loading hidden" id="loadingState" aria-live="polite">
+                    <div class="loading__spinner"></div>
+                    <div class="loading__text">Cargando datos del clima...</div>
+                </section>
+                <section class="error hidden" id="errorState" role="alert">
+                    <div class="error__icon icon-error" role="img" aria-label="Error"></div>
+                    <h2 class="error__title">Error al cargar los datos</h2>
+                    <p class="error__message">No pudimos obtener la información del clima. Por favor, verifica tu conexión e inténtalo nuevamente.</p>
+                    <button type="button" class="error__button" id="retryButton">Intentar nuevamente</button>
+                </section>
+            </div>
+        </main>
+        <footer class="footer" role="contentinfo">
+            <div class="app__container footer__container">
+                <div class="footer__section">
+                    <h3 class="footer__title">Acerca de</h3>
+                    <p>ClimApp es una aplicación para consultar información climática en tiempo real.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="clima.js"></script>
+</body>
+</html>
